@@ -8,7 +8,7 @@ namespace Lexa.Controllers
 {
     public class AlertController : Controller
     {
-        // GET: Alert
+        // GET: Alert tttt
         public ActionResult AlertList()
         {
             return View();
