@@ -1,0 +1,30 @@
+﻿@using Lexa.Contants;
+@{
+    string controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    string action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+}
+
+<style type="text/css">
+    .page-title, .breadcrumb .breadcrumb-item {
+        text-transform: capitalize;
+    }
+</style>
+
+@if (controller == "dashboard" && action == "index")
+{
+    <h4 class="page-title">Dashboard</h4>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active">
+            Welcome to Lexa Dashboard
+        </li>
+    </ol>
+}
+else
+{
+    <h4 class="page-title">@(Menus.actions.ContainsKey(action) ? Menus.actions[action] : "EmptyActionText")</h4>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="javascript:void(0);">Lexa</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0);">@(Menus.controllers.ContainsKey(controller) ? Menus.controllers[controller] : "EmptyControllerText")</a></li>
+        <li class="breadcrumb-item active">@(Menus.actions.ContainsKey(action) ? Menus.actions[action] : "EmptyActionText")</li>
+    </ol>
+}

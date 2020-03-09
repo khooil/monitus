@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewBag.Title = "UserList";
+}
+@section styles {
+    <!-- DataTables -->
+    <link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Responsive datatable examples -->
+    <link href="~/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-20">
+            <div class="btn-toolbar p-3" role="toolbar">
+                <button class="btn btn-primary btn-add">Add New Group</button>
+            </div>
+            <div class="card-body table-responsive">
+                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Select</th>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>Department Code</th>
+                            <th>Grouop</th>
+                            <th>Email</th>
+                            <th>Add By</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline1">
+                                    <label class="custom-control-label" for="customControlInline1">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>21920</td>
+                            <td>ปัณชรีย์รัตน์ อินทาภัย</td>
+                            <td>108002</td>
+                            <td>-</td>
+                            <td>puncharerat.intapai@ktb.co.th</td>
+                            <td>24085</td>
+                            <td>Supervisor</td>
+                            <td>Inactive</td>
+                            <td class="text-center"><button class="btn btn-primary btn-add">Edit</button></td>
+                            <td class="text-center"><button class="btn btn-primary btn-add">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline1">
+                                    <label class="custom-control-label" for="customControlInline1">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>21920</td>
+                            <td>ปัณชรีย์รัตน์ อินทาภัย</td>
+                            <td>108002</td>
+                            <td>-</td>
+                            <td>puncharerat.intapai@ktb.co.th</td>
+                            <td>24085</td>
+                            <td>Supervisor</td>
+                            <td>Inactive</td>
+                            <td class="text-center"><button class="btn btn-primary btn-add">Edit</button></td>
+                            <td class="text-center"><button class="btn btn-primary btn-add">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline1">
+                                    <label class="custom-control-label" for="customControlInline1">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>21920</td>
+                            <td>ปัณชรีย์รัตน์ อินทาภัย</td>
+                            <td>108002</td>
+                            <td>-</td>
+                            <td>puncharerat.intapai@ktb.co.th</td>
+                            <td>24085</td>
+                            <td>Supervisor</td>
+                            <td>Inactive</td>
+                            <td class="text-center"><button class="btn btn-primary btn-add">Edit</button></td>
+                            <td class="text-center"><button class="btn btn-primary btn-add">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline1">
+                                    <label class="custom-control-label" for="customControlInline1">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>21920</td>
+                            <td>ปัณชรีย์รัตน์ อินทาภัย</td>
+                            <td>108002</td>
+                            <td>-</td>
+                            <td>puncharerat.intapai@ktb.co.th</td>
+                            <td>24085</td>
+                            <td>Supervisor</td>
+                            <td>Inactive</td>
+                            <td class="text-center"><button class="btn btn-primary btn-add">Edit</button></td>
+                            <td class="text-center"><button class="btn btn-primary btn-add">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+
+@section scripts {
+    <!-- Required datatable js -->
+    <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#datatable').DataTable({
+                ordering: false
+            });
+
+            $('.btn-add').on('click', function () {
+                $('#modal-form').modal('show')
+            });
+        });
+    </script>
+}

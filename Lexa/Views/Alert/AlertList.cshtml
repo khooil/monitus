@@ -1,0 +1,261 @@
+﻿
+@{
+    ViewBag.Title = "AlertList";
+}
+@section styles {
+    <!-- DataTables -->
+    <link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <!-- Responsive datatable examples -->
+    <link href="~/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .table tr td {
+            white-space: nowrap;
+        }
+
+            .table tr td .custom-control-label {
+                line-height: 25px;
+            }
+
+        .table > tbody > tr > td, .table > tfoot > tr > td, .table > thead > tr > td {
+            padding: 5px 15px;
+        }
+
+        .table > tbody > tr > td {
+            padding: 10px 12px !important;
+        }
+
+        .table tr td label {
+            font-weight: 300;
+        }
+
+        .modal .table tr th {
+            color: #fff;
+        }
+    </style>
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-20">
+
+            <div class="col-12 p-3">
+                <button class="btn btn-primary btn-add">Add New Profile</button>
+                <button class="btn btn-success" style="float:right">Update</button>
+            </div>
+
+            <div class="card-body table-responsive">
+                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th style="width: 30px;">Select</th>
+                            <th class="text-center">Profile Name</th>
+                            <th class="text-center">Scenario Alert</th>
+                            <th class="text-center">Assigned To Group(s)</th>
+                            <th class="text-center">Assigned To User(s)</th>
+                            <th class="text-center" style="width: 70px;">Status</th>
+                            <th class="text-center" style="width: 70px;">Edit</th>
+                            <th class="text-center" style="width: 70px;">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="c1">
+                                    <label class="custom-control-label" for="c1">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>Merchant Area_NRT</td>
+                            <td>
+                                NM030EDCTestCard <br />
+                                NM0180verAverageTicketSize <br />
+                                NM019SuspectHightAmountEDC<br />
+                                NM019SuspectHightAmountperMonthEDC<br />
+                                NM026InactiveMerchantAccount
+                            </td>
+                            <td class="text-center">
+                                Team Monitor_1
+                            </td>
+                            <td class="text-center"></td>
+                            <td class="text-center">
+                                Active
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-primary">Edit</button>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-dnager">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="c1">
+                                    <label class="custom-control-label" for="c1">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>Merchant Area_NRT</td>
+                            <td>
+                                NM030EDCTestCard <br />
+                                NM0180verAverageTicketSize <br />
+                                NM019SuspectHightAmountEDC<br />
+                                NM019SuspectHightAmountperMonthEDC<br />
+                                NM026InactiveMerchantAccount
+                            </td>
+                            <td class="text-center">
+                                Team Monitor_1
+                            </td>
+                            <td class="text-center"></td>
+                            <td class="text-center">
+                                Active
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-primary">Edit</button>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-dnager">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="c1">
+                                    <label class="custom-control-label" for="c1">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>Merchant Area_NRT</td>
+                            <td>
+                                NM030EDCTestCard <br />
+                                NM0180verAverageTicketSize <br />
+                                NM019SuspectHightAmountEDC<br />
+                                NM019SuspectHightAmountperMonthEDC<br />
+                                NM026InactiveMerchantAccount
+                            </td>
+                            <td class="text-center">
+                                Team Monitor_1
+                            </td>
+                            <td class="text-center"></td>
+                            <td class="text-center">
+                                Active
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-primary">Edit</button>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-dnager">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="modal-form" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">Add Alert manage</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Profile name</label>
+                    <input type="text" class="form-control" value="">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Select Scenario</label>
+                    <select class="form-control" multiple="">
+                        <option value="">NM030EDCTestCard</option>
+                        <option value="">NM0180verAverageTicketSize</option>
+                        <option value="">NM019SuspectHightAmountEDC</option>
+                        <option value="">NM019SuspectHightAmountperMonthEDC</option>
+                    </select>
+                </div>
+
+                <fieldset class="form-group">
+                    <legend class="col-form-label">Alert To</legend>
+                    <div class="form-group">
+                        <label>User</label>
+                        <select class="form-control" multiple>
+                            <option value="">User1</option>
+                            <option value="">User2</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Group</label>
+                        <select class="form-control" multiple>
+                            <option value="1">Group 1</option>
+                            <option value="2">Group 2</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <legend class="col-form-label">Auto Notification</legend>
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option value="">Select</option>
+                            <option value="">Select</option>
+                            <option value="">Select</option>
+                            <option value="">Select</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox m-r-5" style="display:inline-block">
+                            <input type="checkbox" class="custom-control-input" id="sms">
+                            <label class="custom-control-label" for="sms">SMS</label>
+                        </div>
+                        <div class="custom-control custom-checkbox m-r-5" style="display:inline-block">
+                            <input type="checkbox" class="custom-control-input" id="email">
+                            <label class="custom-control-label" for="email">Email</label>
+                        </div>
+                        <div class="custom-control custom-checkbox" style="display:inline-block">
+                            <input type="checkbox" class="custom-control-input" id="pop">
+                            <label class="custom-control-label" for="pop">Popup On screen</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-group m-b-0 text-center" style="margin-top: 30px;">
+                    <button class="btn btn-outline-success waves-effect waves-light">Save</button>
+                    <button class="btn btn-outline-danger waves-effect waves-light">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <!-- Required datatable js -->
+    <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="~/plugins/select2/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#datatable').DataTable({
+                ordering: false
+            });
+
+            $('.btn-add').on('click', function () {
+                $('#modal-form').modal('show')
+            });
+
+            $('.select-multi').select2();
+        });
+    </script>
+}

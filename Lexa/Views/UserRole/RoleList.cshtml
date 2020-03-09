@@ -1,0 +1,288 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@section styles {
+    <!-- DataTables -->
+    <link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Responsive datatable examples -->
+    <link href="~/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .table tr td {
+            white-space: nowrap;
+        }
+
+            .table tr td .custom-control-label {
+                line-height: 25px;
+            }
+
+        .table > tbody > tr > td, .table > tfoot > tr > td, .table > thead > tr > td {
+            padding: 5px 15px;
+        }
+
+        .table > tbody > tr > td {
+            padding: 10px 12px !important;
+        }
+
+        .table tr td label {
+            font-weight: 300;
+        }
+
+        .table tr th {
+            color: #fff;
+        }
+    </style>
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-20">
+
+            <div class="col-12 p-3">
+                <button class="btn btn-primary btn-add">Add New Role</button>
+                <button class="btn btn-success" style="float:right">Update</button>
+            </div>
+
+            <div class="card-body">
+                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th style="width: 30px;">Select</th>
+                            <th class="text-center">Role Name</th>
+                            <th class="text-center">Role Type</th>
+                            <th class="text-center" style="width: 200px; ">Status</th>
+                            <th class="text-center" style="width: 70px;">Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="c1">
+                                    <label class="custom-control-label" for="c1">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td class="text-center">2011/04/25</td>
+                            <td class="text-center">
+                                <button class="btn btn-primary">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="c2">
+                                    <label class="custom-control-label" for="c2">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td class="text-center">2011/04/25</td>
+                            <td class="text-center">
+                                <button class="btn btn-primary">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@*Section for Modal*@
+
+<!--  Modal content for the above example -->
+<div id="modal-form" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">Add Role</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Role name</label>
+                    <input type="text" class="form-control" value="">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" rows="8"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Select Role</label>
+                    <select class="form-control">
+                        <option value="">Admin Checker</option>
+                        <option value="">User Checker</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 table-responsive">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th class="bg-primary">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="t1">
+                                        <label class="custom-control-label" for="t1">Configuration</label>
+                                    </div>
+                                </th>
+                                <th class="bg-primary">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="t2">
+                                        <label class="custom-control-label" for="t2">Case Worker</label>
+                                    </div>
+                                </th>
+                                <th class="bg-primary">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="t3">
+                                        <label class="custom-control-label" for="t3">Case Report</label>
+                                    </div>
+                                </th>
+                                <th class="bg-primary">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="t4">
+                                        <label class="custom-control-label" for="t4">Rule Builder</label>
+                                    </div>
+                                </th>
+                                <th class="bg-primary">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="t5">
+                                        <label class="custom-control-label" for="t5">BI Dashboard</label>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r21">
+                                        <label class="custom-control-label" for="r21">Add User</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r22">
+                                        <label class="custom-control-label" for="r22">My Tasks - Get New Alert</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r23">
+                                        <label class="custom-control-label" for="r23">Alerts Report</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r24">
+                                        <label class="custom-control-label" for="r24">Add/Edit Variable</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r25">
+                                        <label class="custom-control-label" for="r25">Summary Case</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r21">
+                                        <label class="custom-control-label" for="r21">Edit User</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r22">
+                                        <label class="custom-control-label" for="r22">My Tasks - Get New Alert</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r23">
+                                        <label class="custom-control-label" for="r23">Alerts Report</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r24">
+                                        <label class="custom-control-label" for="r24">Add/Edit Variable</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r25">
+                                        <label class="custom-control-label" for="r25">Summary Case</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r21">
+                                        <label class="custom-control-label" for="r21">Edit User</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r22">
+                                        <label class="custom-control-label" for="r22">My Tasks - Get New Alert</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r23">
+                                        <label class="custom-control-label" for="r23">Alerts Report</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r24">
+                                        <label class="custom-control-label" for="r24">Add/Edit Variable</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="r25">
+                                        <label class="custom-control-label" for="r25">Summary Case</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="form-group m-b-0 text-center" style="margin-top: 30px;">
+                    <button class="btn btn-outline-success waves-effect waves-light">Save</button>
+                    <button class="btn btn-outline-danger waves-effect waves-light">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <!-- Required datatable js -->
+    <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#datatable').DataTable({
+                ordering: false
+            });
+
+            $('.btn-add').on('click', function () {
+                $('#modal-form').modal('show')
+            });
+        });
+    </script>
+}

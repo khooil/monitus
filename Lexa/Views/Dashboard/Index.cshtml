@@ -1,0 +1,802 @@
+﻿@section styles{
+    <link rel="stylesheet" href="~/plugins/morris/morris.css">
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+    <!-- DataTables -->
+    <link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/datatables/colReorder.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/datatables/rowReorder.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Owl -->
+    <link href="~/plugins/owl/dist/assets/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/owl/dist/assets/owl.theme.default.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .custom-control label {
+            line-height: 2;
+        }
+        .card-filter {
+            padding: 10px !important;
+            margin-bottom: 10px !important;
+        }
+        .card-filter .close {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            font-weight: 100;
+        }
+        .row-filter {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .row-filter .col-md-2 {
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+        }
+        .mini-stat .mini-stat-icon i {
+            font-size: 20px !important;
+            width: 40px !important;
+            height: 40px !important;
+            line-height: 40px !important;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+        .row-filter .card {
+            margin-bottom: 10px;
+        }
+    </style>
+}
+
+<!--START Card INFO-->
+<div class="row row-filter">
+    <div class="col-md-2">
+        <div class="card mini-stat bg-primary">
+            <div class="card-body mini-stat-img">
+                <div class="text-white">
+                    <h6 class="text-uppercase mb-3">Pending (NRT)</h6>
+                    <h4 class="mb-4">0</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card mini-stat bg-primary">
+            <div class="card-body mini-stat-img">
+                <div class="text-white">
+                    <h6 class="text-uppercase mb-3">Assigned</h6>
+                    <h4 class="mb-4">94</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card mini-stat bg-primary">
+            <div class="card-body mini-stat-img">
+                <div class="text-white">
+                    <h6 class="text-uppercase mb-3">Assigned by Sup.</h6>
+                    <h4 class="mb-4">17</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card mini-stat bg-primary">
+            <div class="card-body mini-stat-img">
+                <div class="mini-stat-icon">
+                    <i class="mdi mdi-briefcase-check float-right"></i>
+                </div>
+                <div class="text-white">
+                    <h6 class="text-uppercase mb-3">Watched ddddddddd</h6>
+                    <h4 class="mb-4">0</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card mini-stat bg-primary">
+            <div class="card-body mini-stat-img">
+                <div class="text-white">
+                    <h6 class="text-uppercase mb-3">Need Advice</h6>
+                    <h4 class="mb-4">0</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card mini-stat bg-primary">
+            <div class="card-body mini-stat-img">
+                <div class="text-white">
+                    <h6 class="text-uppercase mb-3">Fraud Intermediate</h6>
+                    <h4 class="mb-4">0</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card mini-stat bg-primary">
+            <div class="card-body mini-stat-img">
+                <div class="text-white">
+                    <h6 class="text-uppercase mb-3">Request Info</h6>
+                    <h4 class="mb-4">0</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card mini-stat bg-primary">
+            <div class="card-body mini-stat-img">
+                <div class="text-white">
+                    <h6 class="text-uppercase mb-3">Info Update</h6>
+                    <h4 class="mb-4">0</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card mini-stat bg-primary">
+            <div class="card-body mini-stat-img">
+                <div class="text-white">
+                    <h6 class="text-uppercase mb-3">Reassigned</h6>
+                    <h4 class="mb-4">0</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card mini-stat bg-primary">
+            <div class="card-body mini-stat-img">
+                <div class="text-white">
+                    <h6 class="text-uppercase mb-3">Closed Not Fraud</h6>
+                    <h4 class="mb-4">22</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card mini-stat bg-primary">
+            <div class="card-body mini-stat-img">
+                <div class="text-white">
+                    <h6 class="text-uppercase mb-3">Closed Suspect</h6>
+                    <h4 class="mb-4">6</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card mini-stat bg-primary">
+            <div class="card-body mini-stat-img">
+                <div class="text-white">
+                    <h6 class="text-uppercase mb-3">Closed Fraud</h6>
+                    <h4 class="mb-4">1</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--END Card INFO-->
+
+<!--START LIST CARD FILTER-->
+<div class="row row-filter" style="margin-top: 10px; margin-bottom: 10px;">
+    <div class="col-md-2 show-alert-id" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="alert-id">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>Alert ID</label>
+                <input type="text" id="input-alert-id" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-status" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="status">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>Status</label>
+                <input type="text" id="input-status" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-date-time" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="date-time">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>Date/Time</label>
+                <input type="text" id="input-date-time" class="form-control input-card-filter date-picker" value="" placeholder="Choose..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-scenario-no" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="scenario-no">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>Scenario No</label>
+                <input type="text" id="input-scenario-no" class="form-control input-card-filter date-picker" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-trxn-code" style="display: none">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="trxn-code">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>Trxn Code</label>
+                <input type="text" id="input-trxn-code" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-primary-cif" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="primary-cif">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>Primary CIF</label>
+                <input type="text" id="input-primary-cif" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-card-no" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="card-no">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>Card No.</label>
+                <input type="text" id="input-card-no" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-ac-no" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="ac-no">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>A/C No.</label>
+                <input type="text" id="input-ac-no" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-cust-name" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="cust-name">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>Cust Name</label>
+                <input type="text" id="input-cust-name" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-ac-branch" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="ac-branch">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>A/C Branch</label>
+                <input type="text" id="input-ac-branch" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-terminal-id" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="terminal-id">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>Terminal ID</label>
+                <input type="text" id="input-terminal-id" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-terminal-city" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="terminal-city">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>Terminal City</label>
+                <input type="text" id="input-terminal-city" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-terminal-country" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="terminal-country">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>Terminal Country</label>
+                <input type="text" id="input-terminal-country" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-amount" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="amount">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>Amount</label>
+                <input type="text" id="input-amount" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-available-balance" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="available-balance">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>Available Balance</label>
+                <input type="text" id="input-available-balance" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 show-user-id" style="display: none;">
+        <div class="card card-body card-filter">
+            <button type="button" class="close close-cfilter" data-name="user-id">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="form-group">
+                <label>User ID</label>
+                <input type="text" id="input-user-id" class="form-control input-card-filter" value="" placeholder="Type text..">
+            </div>
+        </div>
+    </div>
+</div>
+<!--END LIST CARD FILTER-->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card m-b-20">
+            <div class="btn-toolbar p-3 pull-right" role="toolbar" style="display:block">
+                <button class="btn btn-success waves-effect waves-light" id="btn-add-filter" style="float:right">
+                    <i class="mdi mdi-plus"></i> Add Filter
+                </button>
+            </div>
+            <div class="card-body">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#account" role="tab">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#card" role="tab">Card</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#internet" role="tab">Internet/Mobile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#merchant" role="tab">Merchant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#teller" role="tab">Teller</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <!--Account-->
+                    <div class="tab-pane p-3" id="account" role="tabpanel">
+                        <p class=" mb-0">
+                            Raw denim you probably haven't heard of them jean shorts Austin.
+                            Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache
+                            cliche tempor, williamsburg carles vegan helvetica. Reprehenderit
+                            butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi,
+                            qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+                            iphone. Seitan aliquip quis cardigan american apparel, butcher
+                            voluptate nisi qui.
+                        </p>
+                    </div>
+
+                    <!--Card-->
+                    <div class="tab-pane p-3" id="card" role="tabpanel">
+                        <p class=" mb-0">
+                            Food truck fixie locavore, accusamus mcsweeney's marfa nulla
+                            single-origin coffee squid. Exercitation +1 labore velit, blog
+                            sartorial PBR leggings next level wes anderson artisan four loko
+                            farm-to-table craft beer twee. Qui photo booth letterpress,
+                            commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+                            vinyl cillum PBR. Homo nostrud organic, assumenda labore
+                            aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr,
+                            vero magna velit sapiente labore stumptown. Vegan fanny pack
+                            odio cillum wes anderson 8-bit.
+                        </p>
+                    </div>
+
+                    <!--Internet/Mobile-->
+                    <div class="tab-pane p-3" id="internet" role="tabpanel">
+                        <p class=" mb-0">
+                            Etsy mixtape wayfarers, ethical wes anderson tofu before they
+                            sold out mcsweeney's organic lomo retro fanny pack lo-fi
+                            farm-to-table readymade. Messenger bag gentrify pitchfork
+                            tattooed craft beer, iphone skateboard locavore carles etsy
+                            salvia banksy hoodie helvetica. DIY synth PBR banksy irony.
+                            Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh
+                            mi whatever gluten-free, carles pitchfork biodiesel fixie etsy
+                            retro mlkshk vice blog. Scenester cred you probably haven't
+                            heard of them, vinyl craft beer blog stumptown. Pitchfork
+                            sustainable tofu synth chambray yr.
+                        </p>
+                    </div>
+
+                    <!--Merchant-->
+                    <div class="tab-pane p-3" id="merchant" role="tabpanel">
+                        <p class=" mb-0">
+                            Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
+                            art party before they sold out master cleanse gluten-free squid
+                            scenester freegan cosby sweater. Fanny pack portland seitan DIY,
+                            art party locavore wolf cliche high life echo park Austin. Cred
+                            vinyl keffiyeh DIY salvia PBR, banh mi before they sold out
+                            farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral,
+                            mustache readymade thundercats keffiyeh craft beer marfa
+                            ethical. Wolf salvia freegan, sartorial keffiyeh echo park
+                            vegan.
+                        </p>
+                    </div>
+
+                    <!--Teller-->
+                    <div class="tab-pane active" id="teller" role="tabpanel">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card m-b-20">
+                                    <div class="card-body table-responsive">
+                                        <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="head-teller">
+                                                            <label class="custom-control-label" for="head-teller">&nbsp;</label>
+                                                        </div>
+                                                    </th>
+                                                    <th></th>
+                                                    <th>Alert ID</th>
+                                                    <th>Status</th>
+                                                    <th>Date/Time</th>
+                                                    <th>Scenario No</th>
+                                                    <th>Trxn Code</th>
+                                                    <th>Primary CIF</th>
+                                                    <th>Card No.</th>
+                                                    <th>A/C No.</th>
+                                                    <th>Cust Name</th>
+                                                    <th>A/C Branch</th>
+                                                    <th>Terminal ID</th>
+                                                    <th>Terminal City</th>
+                                                    <th>Terminal Country</th>
+                                                    <th>Amount</th>
+                                                    <th>Available Balance</th>
+                                                    <th>User ID</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customControlInline1">
+                                                            <label class="custom-control-label" for="customControlInline1">&nbsp;</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td>2017052706605138</td>
+                                                    <td>Assigned by Supervisor</td>
+                                                    <td>26/05/2017 20:40:1700</td>
+                                                    <td>NB071</td>
+                                                    <td>LPTR</td>
+                                                    <td>8030218 CIF</td>
+                                                    <td>NA</td>
+                                                    <td>100055226507</td>
+                                                    <td>นาย ฐานันดร คงอินทร์</td>
+                                                    <td>200532</td>
+                                                    <td>NA</td>
+                                                    <td>764</td>
+                                                    <td>764 - Thailand</td>
+                                                    <td>5,800.00</td>
+                                                    <td>494,852.08</td>
+                                                    <td>18370</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customControlInline1">
+                                                            <label class="custom-control-label" for="customControlInline1">&nbsp;</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>2</td>
+                                                    <td>Alert ID</td>
+                                                    <td>Status</td>
+                                                    <td>Date/Time</td>
+                                                    <td>Scenario No</td>
+                                                    <td>Trxn Code</td>
+                                                    <td>Primary CIF</td>
+                                                    <td>Card No.</td>
+                                                    <td>A/C No.</td>
+                                                    <td>Cust Name</td>
+                                                    <td>A/C Branch</td>
+                                                    <td>Terminal ID</td>
+                                                    <td>Terminal City</td>
+                                                    <td>Terminal Country</td>
+                                                    <td>Amount</td>
+                                                    <td>Available Balance</td>
+                                                    <td>User ID</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customControlInline1">
+                                                            <label class="custom-control-label" for="customControlInline1">&nbsp;</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>Alert ID</td>
+                                                    <td>Status</td>
+                                                    <td>Date/Time</td>
+                                                    <td>Scenario No</td>
+                                                    <td>Trxn Code</td>
+                                                    <td>Primary CIF</td>
+                                                    <td>Card No.</td>
+                                                    <td>A/C No.</td>
+                                                    <td>Cust Name</td>
+                                                    <td>A/C Branch</td>
+                                                    <td>Terminal ID</td>
+                                                    <td>Terminal City</td>
+                                                    <td>Terminal Country</td>
+                                                    <td>Amount</td>
+                                                    <td>Available Balance</td>
+                                                    <td>User ID</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customControlInline1">
+                                                            <label class="custom-control-label" for="customControlInline1">&nbsp;</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td>Alert ID</td>
+                                                    <td>Status</td>
+                                                    <td>Date/Time</td>
+                                                    <td>Scenario No</td>
+                                                    <td>Trxn Code</td>
+                                                    <td>Primary CIF</td>
+                                                    <td>Card No.</td>
+                                                    <td>A/C No.</td>
+                                                    <td>Cust Name</td>
+                                                    <td>A/C Branch</td>
+                                                    <td>Terminal ID</td>
+                                                    <td>Terminal City</td>
+                                                    <td>Terminal Country</td>
+                                                    <td>Amount</td>
+                                                    <td>Available Balance</td>
+                                                    <td>User ID</td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                        </div> <!-- end row -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<
+<!--  Modal content for the above example -->
+<div class="modal fade bs-example-modal-lg" id="modalListColumn" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">Column Filter</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-alert-id" value="alert-id">
+                                <label class="custom-control-label" for="check-alert-id">Alert ID</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-status" value="status">
+                                <label class="custom-control-label" for="check-status">Status</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-datatime" value="datatime">
+                                <label class="custom-control-label" for="check-datatime">Date/Time</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-scenario-no" value="scenario-no">
+                                <label class="custom-control-label" for="check-scenario-no">Scenario No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-trxn-code" value="trxn-code">
+                                <label class="custom-control-label" for="check-trxn-code">Trxn code</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-primary-cif" value="primary-cif">
+                                <label class="custom-control-label" for="check-primary-cif">Primary CIF</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-card-no" value="card-no">
+                                <label class="custom-control-label" for="check-card-no">Card No.</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-ac-no" value="ac-no">
+                                <label class="custom-control-label" for="check-ac-no">A/C No.</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-cust-name" value="cust-name">
+                                <label class="custom-control-label" for="check-cust-name">Cust Name</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-ac-branch" value="ac-branch">
+                                <label class="custom-control-label" for="check-ac-branch">A/C Branch</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-terminal-id" value="terminal-id">
+                                <label class="custom-control-label" for="check-terminal-id">Terminal ID</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-terminal-city" value="terminal-city">
+                                <label class="custom-control-label" for="check-terminal-city">Terminal City</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-terminal-country" value="terminal-country">
+                                <label class="custom-control-label" for="check-terminal-country">Terminal Country</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-amount" value="amount">
+                                <label class="custom-control-label" for="check-amount">Amount</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-available-balance" value="available-balance">
+                                <label class="custom-control-label" for="check-available-balance">Available Balance</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input check-change" id="check-user-id" value="user-id">
+                                <label class="custom-control-label" for="check-user-id">User ID</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <!-- Required datatable js -->
+    <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="~/plugins/datatables/dataTables.colReorder.min.js"></script>
+    <script src="~/plugins/datatables/dataTables.rowReorder.min.js"></script>
+
+    <!-- Owl -->
+    <!-- <script src="~/plugins/owl/dist/owl.carousel.min.js"></script> -->
+
+    <script>
+        $(document).ready(function () {
+            var table = $('#datatable').DataTable({
+                colReorder: {
+                    order: [ 0, 1, 2, 3, 4, 5 , 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+                },
+                rowReorder: true,
+                ordering: false,
+            });
+
+            table.on('row-reorder', function (e, details) {
+                var node = details.node;
+                var row = table.row(node);
+
+                console.log(node);
+                console.log(row);
+            });
+
+            //$(".owl-carousel").owlCarousel({
+            //    items: 4
+            //});
+
+            $("#btn-add-filter").on('click', function () {
+                $("#modalListColumn").modal('show');
+            });
+
+            $(".close-cfilter").on('click', function () {
+                $("#check-" + $(this).data('name')).prop("checked", false);
+                loadCardFilter();
+                console.log("#check-" + $(this).data('name'));
+            });
+
+            $(".check-change").on('change', function () {
+                console.log($(this).val());
+                loadCardFilter();
+            });
+        });
+
+        function loadCardFilter()
+        {
+            $(".check-change").each(function () {
+                if ($(this).is(":checked")) {
+                    $(".show-" + $(this).val()).fadeIn();
+                }
+                else {
+                    $(".show-" + $(this).val()).fadeOut();
+                }
+            });
+
+            //var _dpost = {
+            //    tid: "TestTID",
+            //    tname: "TestTNAME",
+            //    tsub: {
+            //        subone: "subone",
+            //        subtwo: "subtwo"
+            //    }
+            //}
+
+            //$.ajax({
+            //    type: 'GET',
+            //    data: _dpost,
+            //    url: '/dashboard/testajax',
+            //    success: function (res) {
+            //        console.log(res);
+            //    }
+            //});
+        }
+    </script>
+}

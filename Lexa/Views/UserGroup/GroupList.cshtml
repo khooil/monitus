@@ -1,0 +1,321 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@section styles {
+    <!-- DataTables -->
+    <link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/dual-listbox/dist/dual-listbox.css">
+
+    <!-- Responsive datatable examples -->
+    <link href="~/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .dual-listbox .dual-listbox__search {
+            width: 225px;
+            border: 1px solid #ebedf2;
+            color: #595d6e;
+            outline: 0 !important;
+            border-radius: 4px
+        }
+
+            .dual-listbox .dual-listbox__search:active, .dual-listbox .dual-listbox__search:focus {
+                border-color: #5fccff !important
+            }
+
+            .dual-listbox .dual-listbox__search.dual-listbox__search--hidden {
+                display: none
+            }
+
+        .dual-listbox .dual-listbox__container .dual-listbox__title {
+            color: #595d6e;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: .75rem .75rem;
+            border: 1px solid #ebedf2;
+            border-bottom: 0;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px
+        }
+
+        .dual-listbox .dual-listbox__container .dual-listbox__buttons {
+            margin: 0 1rem
+        }
+
+            .dual-listbox .dual-listbox__container .dual-listbox__buttons .dual-listbox__button {
+                border: 0;
+                background: 0 0;
+                outline: 0 !important;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                outline: 0 !important;
+                padding: .5rem 1rem;
+                color: #a2a5b9;
+                font-weight: 500;
+                font-size: .9rem;
+                background-color: #f2f3f7;
+                -webkit-transition: all .3s ease;
+                transition: all .3s ease;
+                border-radius: 4px
+            }
+
+                .dual-listbox .dual-listbox__container .dual-listbox__buttons .dual-listbox__button i {
+                    font-size: .6rem
+                }
+
+                .dual-listbox .dual-listbox__container .dual-listbox__buttons .dual-listbox__button:hover {
+                    -webkit-transition: all .3s ease;
+                    transition: all .3s ease;
+                    color: #22b9ff
+                }
+
+        .dual-listbox .dual-listbox__container .dual-listbox__available, .dual-listbox .dual-listbox__container .dual-listbox__selected {
+            width: 225px;
+            color: #595d6e;
+            border: 1px solid #ebedf2;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px
+        }
+
+            .dual-listbox .dual-listbox__container .dual-listbox__available .dual-listbox__item, .dual-listbox .dual-listbox__container .dual-listbox__selected .dual-listbox__item {
+                padding: .75rem .75rem;
+                border-bottom: 1px solid #ebedf2
+            }
+
+                .dual-listbox .dual-listbox__container .dual-listbox__available .dual-listbox__item:last-child, .dual-listbox .dual-listbox__container .dual-listbox__selected .dual-listbox__item:last-child {
+                    border-bottom: 0
+                }
+
+                .dual-listbox .dual-listbox__container .dual-listbox__available .dual-listbox__item.dual-listbox__item--selected, .dual-listbox .dual-listbox__container .dual-listbox__selected .dual-listbox__item.dual-listbox__item--selected {
+                    background-color: #f2f3f7
+                }
+
+        .dual-listbox .dual-listbox__search {
+            width: 225px;
+            border: 1px solid #ebedf2;
+            color: #595d6e;
+            outline: 0 !important;
+            border-radius: 4px
+        }
+
+            .dual-listbox .dual-listbox__search:active, .dual-listbox .dual-listbox__search:focus {
+                border-color: #5fccff !important
+            }
+
+            .dual-listbox .dual-listbox__search.dual-listbox__search--hidden {
+                display: none
+            }
+
+        .dual-listbox .dual-listbox__container .dual-listbox__title {
+            color: #595d6e;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: .75rem .75rem;
+            border: 1px solid #ebedf2;
+            border-bottom: 0;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px
+        }
+
+        .dual-listbox .dual-listbox__container .dual-listbox__buttons {
+            margin: 0 1rem
+        }
+
+            .dual-listbox .dual-listbox__container .dual-listbox__buttons .dual-listbox__button {
+                border: 0;
+                background: 0 0;
+                outline: 0 !important;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                outline: 0 !important;
+                padding: .5rem 1rem;
+                color: #a2a5b9;
+                font-weight: 500;
+                font-size: .9rem;
+                background-color: #f2f3f7;
+                -webkit-transition: all .3s ease;
+                transition: all .3s ease;
+                border-radius: 4px
+            }
+
+                .dual-listbox .dual-listbox__container .dual-listbox__buttons .dual-listbox__button i {
+                    font-size: .6rem
+                }
+
+                .dual-listbox .dual-listbox__container .dual-listbox__buttons .dual-listbox__button:hover {
+                    -webkit-transition: all .3s ease;
+                    transition: all .3s ease;
+                    color: #22b9ff
+                }
+
+        .dual-listbox .dual-listbox__container .dual-listbox__available, .dual-listbox .dual-listbox__container .dual-listbox__selected {
+            width: 225px;
+            color: #595d6e;
+            border: 1px solid #ebedf2;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px
+        }
+
+            .dual-listbox .dual-listbox__container .dual-listbox__available .dual-listbox__item, .dual-listbox .dual-listbox__container .dual-listbox__selected .dual-listbox__item {
+                padding: .75rem .75rem;
+                border-bottom: 1px solid #ebedf2
+            }
+
+                .dual-listbox .dual-listbox__container .dual-listbox__available .dual-listbox__item:last-child, .dual-listbox .dual-listbox__container .dual-listbox__selected .dual-listbox__item:last-child {
+                    border-bottom: 0
+                }
+
+                .dual-listbox .dual-listbox__container .dual-listbox__available .dual-listbox__item.dual-listbox__item--selected, .dual-listbox .dual-listbox__container .dual-listbox__selected .dual-listbox__item.dual-listbox__item--selected {
+                    background-color: #f2f3f7
+                }
+    </style>
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-20">
+            <div class="btn-toolbar p-3" role="toolbar">
+                <button class="btn btn-primary btn-add">Add New Group</button>
+            </div>
+            <div class="card-body">
+                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Select</th>
+                            <th>Group Name</th>
+                            <th>Description</th>
+                            <th>Member(s)</th>
+                            <th>Status</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline1">
+                                    <label class="custom-control-label" for="customControlInline1">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>Team Monitor_1</td>
+                            <td>ATM & Internet & Merchant</td>
+                            <td>6</td>
+                            <td>Active</td>
+                            <td class="text-center"><button class="btn btn-primary btn-add">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline2">
+                                    <label class="custom-control-label" for="customControlInline2">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>Team Monitor_1</td>
+                            <td>ATM & Internet & Merchant</td>
+                            <td>6</td>
+                            <td>Active</td>
+                            <td class="text-center"><button class="btn btn-primary btn-add">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline3">
+                                    <label class="custom-control-label" for="customControlInline3">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>Team Monitor_1</td>
+                            <td>ATM & Internet & Merchant</td>
+                            <td>6</td>
+                            <td>Active</td>
+                            <td class="text-center"><button class="btn btn-primary btn-add">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline4">
+                                    <label class="custom-control-label" for="customControlInline4">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>Team Monitor_1</td>
+                            <td>ATM & Internet & Merchant</td>
+                            <td>6</td>
+                            <td>Active</td>
+                            <td class="text-center"><button class="btn btn-primary btn-add">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+@*popup*@
+<div id="modal-form" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">Add New Group</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Group Name</label>
+                    <input type="text" class="colorpicker-default form-control" value="">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" class="colorpicker-rgba form-control" value="" data-color-format="rgba">
+                </div>
+                <div class="form-group">
+                    <select id="select" clasas="dual-listbox__title" multiple>
+                        <option>test 1</option>
+                        <option>test 2</option>
+                    </select>
+                </div>
+                <div class="form-group m-b-0 text-center">
+                    <button class="btn btn-outline-success waves-effect waves-light">Save</button>
+                    <button class="btn btn-outline-danger waves-effect waves-light">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <!-- Required datatable js -->
+    <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dual-listbox/dist/dual-listbox.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#datatable').DataTable({
+                ordering: false
+            });
+
+            $('.btn-add').on('click', function () {
+                $('#modal-form').modal('show')
+            });
+
+            let dualListbox = new DualListbox('#select', {
+                addEvent: function(value) { // Should use the event listeners
+                    console.log(value);
+                },
+                removeEvent: function(value) { // Should use the event listeners
+                    console.log(value);
+                },
+                availableTitle: 'Different title',
+                selectedTitle: 'Different title',
+                addButtonText: '>',
+                removeButtonText: '<',
+                addAllButtonText: '>>',
+                removeAllButtonText: '<<'
+            });
+        });
+    </script>
+}
